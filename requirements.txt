@@ -1,0 +1,1 @@
+-e git://github.com/hakobera/luigi-bigquery#egg=luigi-bigquery

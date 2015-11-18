@@ -1,0 +1,8 @@
+[core]
+error-email: you@example.com
+
+# configuration for Luigi-BigQuery
+[bigquery]
+project_id: your_project_id
+service_account: your_service_account
+private_key_file: /path/to/key.p12
