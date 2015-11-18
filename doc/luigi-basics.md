@@ -151,11 +151,11 @@ ref: http://luigi.readthedocs.org/en/latest/execution_model.html
 
 ### ステータス画面
 
-![](https://raw.githubusercontent.com/spotify/luigi/master/doc/visualiser_front_page.png)
+![](https://cloud.githubusercontent.com/assets/346598/11255750/3d4fcb06-8e8b-11e5-9c70-897edc8bc0da.png)
 
 ### Job ネット的なやつ
 
-![](https://raw.githubusercontent.com/spotify/luigi/master/doc/user_recs.png)
+![](https://cloud.githubusercontent.com/assets/346598/11255717/0f151994-8e8b-11e5-9dc5-4fb5a1dc39b2.png)
 
 ## エラー処理
 
