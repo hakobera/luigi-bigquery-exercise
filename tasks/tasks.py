@@ -21,15 +21,19 @@ class DailyTask(luigi.Task):
 
 class BatchTask(luigi.Task):
     def requires(self):
-        return {
-            'account_20151108': DailyTop10Account(day=dt.strptime("2015-11-08", "%Y-%m-%d")),
-            'account_20151109': DailyTop10Account(day=dt.strptime("2015-11-09", "%Y-%m-%d")),
-            'account_20151110': DailyTop10Account(day=dt.strptime("2015-11-10", "%Y-%m-%d")),
-            'account_20151111': DailyTop10Account(day=dt.strptime("2015-11-11", "%Y-%m-%d")),
-            'account_20151112': DailyTop10Account(day=dt.strptime("2015-11-12", "%Y-%m-%d")),
-            'account_20151113': DailyTop10Account(day=dt.strptime("2015-11-13", "%Y-%m-%d")),
-            'account_20151114': DailyTop10Account(day=dt.strptime("2015-11-14", "%Y-%m-%d")),
-        }
+        f = lambda x: DailyTop10Account(day=dt.strptime("2015-11-{0:02d}".format(x), "%Y-%m-%d"))
+        return map(f, range(8, 14))
+
+        # Above code is same mean as following code
+        #return [
+        #    DailyTop10Account(day=dt.strptime("2015-11-08", "%Y-%m-%d")),
+        #    DailyTop10Account(day=dt.strptime("2015-11-09", "%Y-%m-%d")),
+        #    DailyTop10Account(day=dt.strptime("2015-11-10", "%Y-%m-%d")),
+        #    DailyTop10Account(day=dt.strptime("2015-11-11", "%Y-%m-%d")),
+        #    DailyTop10Account(day=dt.strptime("2015-11-12", "%Y-%m-%d")),
+        #    DailyTop10Account(day=dt.strptime("2015-11-13", "%Y-%m-%d")),
+        #    DailyTop10Account(day=dt.strptime("2015-11-14", "%Y-%m-%d"))
+        #]
 
     def output(self):
         return luigi.LocalTarget("output/BatchTask.txt")
