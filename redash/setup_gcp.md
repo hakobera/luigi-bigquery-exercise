@@ -13,8 +13,8 @@ http://docs.redash.io/en/latest/setup.html#google-compute-engine
 ## Import image to GCP
 
 ```bash
-$ gcloud compute images create "redash-081-b1110-bq" \
---source-uri gs://redash-images/redash.0.8.1.b1110-bq.tar.gz
+$ gcloud compute images create "redash-091-b1377-bq" \
+--source-uri gs://redash-images/redash.0.9.1.b1377-bq.tar.gz
 ```
 
 ## Create network
@@ -35,7 +35,7 @@ $ gcloud compute firewall-rules create redash-allow-https \
 
 ```bash
 $ gcloud compute instances create redash \
---image redash-081-b1110-bq \
+--image redash-091-b1377-bq \
 --scopes storage-ro,bigquery \
 --network redash \
 --zone us-central1-a
